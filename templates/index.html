@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The total amount spent</title>
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1 style="color:Violet;">The total amount spent</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="average_session_length" placeholder="Average Session Length" required="required" /><br>
+      <input type="text" name="Time_on_website" placeholder="Time on Website" required="required" /><br>
+        <input type="text" name="Length_of_membership" placeholder="Length of membership" required="required" /><br>
+        <input type="text" name="yearly_membership" placeholder="Yearly Member shipp" required="required" /><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict amount spent</button></p>
+    </form>
+
+   <br>
+   <br>
+   <h4 style="color:Violet;">
+   {{ prediction_text }} </h4>
+
+ </div>
+
+
+</body>
+</html>
